@@ -180,6 +180,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/Autmor"><img src="https://avatars.githubusercontent.com/u/66399049?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Autmor</b></sub></a><br /><a href="https://github.com/death-save/combat-utility-belt/commits?author=Autmor" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/MichalGolaszewski"><img src="https://avatars.githubusercontent.com/u/46850235?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Michał Gołaszewski</b></sub></a><br /><a href="#translation-MichalGolaszewski" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/eclarke12"><img src="https://avatars.githubusercontent.com/u/42503461?v=4?s=100" width="100px;" alt=""/><br /><sub><b>errational</b></sub></a><br /><a href="#translation-errationali" title="Translation">🌍</a></td>
   </tr>
 </table>
 
