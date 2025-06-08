@@ -1,32 +1,15 @@
-<div id="death-save-social" style="height:36px; background:rgba(255, 255, 255, 0.7); display: flex;text-align:center; padding-top:2px">
-<span style="flex:1;">
-<a href="https://discord.gg/wwH7DQc" title="Discord"><img height="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/discord.svg"/></a></span>
-<span style="flex:1">
-<a href="https://twitter.com/death_save_dev" title="Twitter"><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/twitter.svg" /></a></span>
-<span style="flex:1">
-<a href="https://twitch.tv/teamDEATHSAVE" title="Twitch"><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/twitch.svg" /></a></span>
-<span style="flex:1">
-<a href="https://www.youtube.com/channel/UCxhr66d1sjfXU4SQ5MEqPvg" title="YouTube"><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/youtube.svg" /></a></span>
-</div><br/>
+![https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fcliffcolvin%2Fcombat-utility-belt%2Fmain%2Fmodule.json](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fcliffcolvin%2Fcombat-utility-belt%2Fmain%2Fmodule.json)
 
-![https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fdeath-save%2Fcombat-utility-belt%2Fmaster%2Fmodule.json](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fdeath-save%2Fcombat-utility-belt%2Fmaster%2Fmodule.json)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-30-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/death-save/combat-utility-belt) 
-[![GitHub downloads (latest)](https://img.shields.io/badge/dynamic/json?label=Downloads@latest&query=assets[?(@.name.includes('zip'))].download_count&url=https://api.github.com/repos/death-save/combat-utility-belt/releases/latest&color=green)](https://github.com/death-save/combat-utility-belt/releases/latest)
-[![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Install%20Base&query=package.installs&suffix=%&url=https://forge-vtt.com/api/bazaar/package/combat-utility-belt&colorB=brightgreen)](https://forge-vtt.com/)
-
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/cliffcolvin/combat-utility-belt) 
+[![GitHub downloads (latest)](https://img.shields.io/badge/dynamic/json?label=Downloads@latest&query=assets[?(@.name.includes('zip'))].download_count&url=https://api.github.com/repos/cliffcolvin/combat-utility-belt/releases/latest&color=green)](https://github.com/cliffcolvin/combat-utility-belt/releases/latest)
 
 # Combat Utility Belt
-*made with ❤ by [DEATH SAVE DEVELOPMENT](https://deathsave.dev)*
-
+*Foundry VTT v13 Compatible Fork*
 
 ---
-**[📚Wiki/How-To](https://github.com/death-save/combat-utility-belt/wiki)**    
-**[🐛Issues/Bugs](https://github.com/death-save/combat-utility-belt/issues)**    
-**[💬Contact](#death-save-social)**    
-**[📜Changelog](https://github.com/death-save/combat-utility-belt/blob/master/CHANGELOG.md)**    
+**[📚Wiki/How-To](https://github.com/cliffcolvin/combat-utility-belt/wiki)**    
+**[🐛Issues/Bugs](https://github.com/cliffcolvin/combat-utility-belt/issues)**    
+**[📜Changelog](https://github.com/cliffcolvin/combat-utility-belt/blob/main/CHANGELOG.md)**    
 **[📦Installation](#installation)**    
 **[🛠 Gadgets](#gadgets)**    
 **[👏Thanks/Attribution](#thanksattribution)**
@@ -34,6 +17,7 @@
 ---
 > Every ~~hero~~ GM needs gadgets to keep their game safe from dastardly players up to no good! And where better to store those gadget than on your very own Combat Utility Belt!    
 This handy-dandy combat aid comes packed with a bunch of gadgets to ensure you get a TPK every time...
+
 ## Features (Gadgets)
 ### Core
 * CUBputer
@@ -50,14 +34,12 @@ This handy-dandy combat aid comes packed with a bunch of gadgets to ensure you g
 * Concentrator
 * Mighty Summoner
 
-
 # Installation
 ~~Simply wrap the belt around your waist and affix the clasp.~~
 
 1. Navigate to the Foundry Setup screen and click on the Modules tab
-2. Click Install Module and look for Combat Utility Belt
+2. Click Install Module and paste this manifest URL: `https://github.com/cliffcolvin/combat-utility-belt/releases/latest/download/module.json`
 3. Once the Combat Utility Belt is installed, open your desired world and ~~wreak havoc on your players~~ navigate to the **Settings > Manage Modules** and enable the module then **Settings > Module Settings** and enable the gadget settings you want!
-
 
 # Gadgets
 <details>
@@ -100,7 +82,6 @@ Maybe you forgot that your NPC's name reveals a dark secret about their past, or
 
 Fret no more, for this gadget replaces NPC names with a replacement of your choice. Personally, I'm a fan of Melvin.
 
-
 ## Mighty Summoner
 *(D&D5e only) Druid Circle of the Shepherd class feature support*    
 Rolls additional dice for summoned creatures
@@ -137,16 +118,20 @@ Trigger the addition or removal of Conditions, and/or the execution of Macros ba
 ---
 
 # Thanks/Attribution
-Firstly thank you to all my former Patreon patrons, you helped make module development extra special!
 
-Secondly I want to shout out the awesome contributors for this module (see: [contributors](#contributors-)). Whether it's code, translations, or bugs/suggestions, without your help Combat Utility Belt would not be as awesome as it is! 
+## Original Work
+This module is a fork of the original Combat Utility Belt created by Evan Clarke (errational) and the DEATH SAVE DEVELOPMENT team. This fork exists to provide Foundry VTT v13 compatibility updates.
 
-I would also like to acknowledge that many of the functions found in the Combat Utility Belt are inspired by [Roll20 API scripts](https://github.com/RobinKuiper/Roll20APIScripts) written by @RobinKuiper (namely the Combat Tracker, Death Tracker and StatusInfo ones).
+**Original Repository:** https://github.com/death-save/combat-utility-belt
 
+## Contributors
+Thank you to all the awesome contributors to the original module (see: [contributors](#contributors-)). Whether it's code, translations, or bugs/suggestions, without your help Combat Utility Belt would not be as awesome as it is! 
+
+## Inspiration
+Many of the functions found in the Combat Utility Belt are inspired by [Roll20 API scripts](https://github.com/RobinKuiper/Roll20APIScripts) written by @RobinKuiper (namely the Combat Tracker, Death Tracker and StatusInfo ones).
+
+## Assets
 Concentration icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [Flat Icon](www.flaticon.com)
-
-## Donations/Sponsorship
-Any support you can provide is greatly appreciated! Check out the `Sponsor this project` section in the right-hand sidebar.
 
 ## Contributors ✨
 
