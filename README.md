@@ -1,7 +1,7 @@
-![https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fgmtoolkit%2Fcombat-utility-belt%2Fmain%2Fmodule.json](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fgmtoolkit%2Fcombat-utility-belt%2Fmain%2Fmodule.json)
-
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/gmtoolkit/combat-utility-belt) 
-[![GitHub downloads (latest)](https://img.shields.io/badge/dynamic/json?label=Downloads@latest&query=assets[?(@.name.includes('zip'))].download_count&url=https://api.github.com/repos/gmtoolkit/combat-utility-belt/releases/latest&color=green)](https://github.com/gmtoolkit/combat-utility-belt/releases/latest)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/gmtoolkit/combat-utility-belt?style=flat&logo=github)](https://github.com/gmtoolkit/combat-utility-belt/releases/latest)
+[![GitHub issues](https://img.shields.io/github/issues/gmtoolkit/combat-utility-belt?style=flat&logo=github)](https://github.com/gmtoolkit/combat-utility-belt/issues)
+[![GitHub license](https://img.shields.io/github/license/gmtoolkit/combat-utility-belt?style=flat)](https://github.com/gmtoolkit/combat-utility-belt/blob/main/LICENSE)
+[![Foundry Compatible](https://img.shields.io/badge/Foundry-v13+-green?style=flat)](https://foundryvtt.com/)
 
 # Combat Utility Belt
 *Foundry VTT v13 Compatible Fork*
