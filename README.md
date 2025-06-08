@@ -1,15 +1,15 @@
-![https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fcliffcolvin%2Fcombat-utility-belt%2Fmain%2Fmodule.json](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fcliffcolvin%2Fcombat-utility-belt%2Fmain%2Fmodule.json)
+![https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fgmtoolkit%2Fcombat-utility-belt%2Fmain%2Fmodule.json](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fgmtoolkit%2Fcombat-utility-belt%2Fmain%2Fmodule.json)
 
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/cliffcolvin/combat-utility-belt) 
-[![GitHub downloads (latest)](https://img.shields.io/badge/dynamic/json?label=Downloads@latest&query=assets[?(@.name.includes('zip'))].download_count&url=https://api.github.com/repos/cliffcolvin/combat-utility-belt/releases/latest&color=green)](https://github.com/cliffcolvin/combat-utility-belt/releases/latest)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/gmtoolkit/combat-utility-belt) 
+[![GitHub downloads (latest)](https://img.shields.io/badge/dynamic/json?label=Downloads@latest&query=assets[?(@.name.includes('zip'))].download_count&url=https://api.github.com/repos/gmtoolkit/combat-utility-belt/releases/latest&color=green)](https://github.com/gmtoolkit/combat-utility-belt/releases/latest)
 
 # Combat Utility Belt
 *Foundry VTT v13 Compatible Fork*
 
 ---
-**[📚Wiki/How-To](https://github.com/cliffcolvin/combat-utility-belt/wiki)**    
-**[🐛Issues/Bugs](https://github.com/cliffcolvin/combat-utility-belt/issues)**    
-**[📜Changelog](https://github.com/cliffcolvin/combat-utility-belt/blob/main/CHANGELOG.md)**    
+**[📚Wiki/How-To](https://github.com/gmtoolkit/combat-utility-belt/wiki)**    
+**[🐛Issues/Bugs](https://github.com/gmtoolkit/combat-utility-belt/issues)**    
+**[📜Changelog](https://github.com/gmtoolkit/combat-utility-belt/blob/main/CHANGELOG.md)**    
 **[📦Installation](#installation)**    
 **[🛠 Gadgets](#gadgets)**    
 **[👏Thanks/Attribution](#thanksattribution)**
@@ -38,7 +38,7 @@ This handy-dandy combat aid comes packed with a bunch of gadgets to ensure you g
 ~~Simply wrap the belt around your waist and affix the clasp.~~
 
 1. Navigate to the Foundry Setup screen and click on the Modules tab
-2. Click Install Module and paste this manifest URL: `https://github.com/cliffcolvin/combat-utility-belt/releases/latest/download/module.json`
+2. Click Install Module and paste this manifest URL: `https://github.com/gmtoolkit/combat-utility-belt/releases/latest/download/module.json`
 3. Once the Combat Utility Belt is installed, open your desired world and ~~wreak havoc on your players~~ navigate to the **Settings > Manage Modules** and enable the module then **Settings > Module Settings** and enable the gadget settings you want!
 
 # Gadgets
