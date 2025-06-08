@@ -286,7 +286,7 @@
 ## [1.4.0] - 2021-02-07
 ### Added
 - Triggler now includes an **Advanced Trigger** type and associated fields that allow you to manually enter the path to the Actor/Token properties you want to listen for in your trigger. This provides compatibility for game systems not previously supported by Triggler, as well as allowing for listening for changes to properties that were not previously exposed in the dropdown menus.
-*Note: This functionality will require some knowledge of the data model for your game system. Please check in the game system documentation or contact game system developers before contacting Death Save Development for assistance.*
+*Note: This functionality will require some knowledge of the data model for your game system. Please check in the game system documentation or contact game system developers before contacting GmToolKit Development for assistance.*
 
 ### Changed
 - Triggler form no longer closes when you click Save
@@ -407,7 +407,7 @@
 ## [1.3.0] - 2020-10-21
 ### Added
 - Condition Lab now supports **Active Effects**! A new `Active Effects Config` button appears next to each Condition's name in the Condition Lab. Clicking the button opens the Enhanced Effects Config app that allows you to configure the Active Effects for that Condition.
-- New `About CUB` button added to the CUBputer header which provides more info about CUB as well as links to the wiki, DEATH SAVE Discord, and the DEATH SAVE Patreon
+- New `About CUB` button added to the CUBputer header which provides more info about CUB as well as links to the wiki, GMKit Discord, and the GmKit Patreon
 - `dnd5e-extended` Condition Map now includes an `Inspiration` Condition
 - A number of new translation strings have been added (thank you translators, I am trying to get them all!)
 

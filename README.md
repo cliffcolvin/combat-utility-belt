@@ -120,7 +120,7 @@ Trigger the addition or removal of Conditions, and/or the execution of Macros ba
 # Thanks/Attribution
 
 ## Original Work
-This module is a fork of the original Combat Utility Belt created by Evan Clarke (errational) and the DEATH SAVE DEVELOPMENT team. This fork exists to provide Foundry VTT v13 compatibility updates.
+This module is a fork of the original Combat Utility Belt created by Evan Clarke (errational) and the DEATH SAVE DEVELOPMENT team. This fork exists to provide Foundry VTT v13 compatibility updates and will be a part of my Free Forever tier of modules where I hope to keep this one alive for the community.
 
 **Original Repository:** https://github.com/death-save/combat-utility-belt
 
