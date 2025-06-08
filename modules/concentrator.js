@@ -68,7 +68,7 @@ export class Concentrator {
         const isSpell = item ? item.type === "spell" : false;
 
         // If it is, check if it requires concentration
-        const isConcentration = concentrationDiv.length ? true : (isSpell ? !!getProperty(item, `system.components.concentration`) : false);
+        const isConcentration = concentrationDiv.length ? true : (isSpell ? !!foundry.utils.getProperty(item, `system.components.concentration`) : false);
 
         if (!isConcentration) return;
 
@@ -109,12 +109,12 @@ export class Concentrator {
         // Update handled in token hooks
         if (actor.isToken) return true;
         
-        const newTempHealth = getProperty(update, `system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.temp`);
-        const oldTempHealth = getProperty(actor, `system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.temp`);
+        const newTempHealth = foundry.utils.getProperty(update, `system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.temp`);
+        const oldTempHealth = foundry.utils.getProperty(actor, `system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.temp`);
         const tempDamageTaken = Concentrator._wasDamageTaken(newTempHealth, oldTempHealth);
         
-        const newHealth = getProperty(update, `system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.value`);
-        const oldHealth = getProperty(actor, `system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.value`);
+        const newHealth = foundry.utils.getProperty(update, `system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.value`);
+        const oldHealth = foundry.utils.getProperty(actor, `system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.value`);
         const damageTaken = Concentrator._wasDamageTaken(newHealth, oldHealth);
         
         options[NAME] = options[NAME] ?? {};
@@ -125,7 +125,7 @@ export class Concentrator {
             options[NAME][FLAGS.concentrator.isDead] = newHealth <= 0;
         }
 
-        setProperty(options, `${NAME}.${FLAGS.concentrator.updateProcessed}`, false);
+        foundry.utils.setProperty(options, `${NAME}.${FLAGS.concentrator.updateProcessed}`, false);
         return true;
     }
 
@@ -136,8 +136,8 @@ export class Concentrator {
      * @param {*} options 
      */
     static _onUpdateActor(actor, update, options, userId){
-        const damageTaken = getProperty(options, `${NAME}.${FLAGS.concentrator.damageTaken}`);
-        const updateProcessed = getProperty(options, `${NAME}.${FLAGS.concentrator.updateProcessed}`);
+        const damageTaken = foundry.utils.getProperty(options, `${NAME}.${FLAGS.concentrator.damageTaken}`);
+        const updateProcessed = foundry.utils.getProperty(options, `${NAME}.${FLAGS.concentrator.updateProcessed}`);
         const gmUser = (game.userId === userId && game.user.isGM) ? game.user : Sidekick.getFirstGM();
 
         if (!damageTaken || updateProcessed || game.userId !== gmUser.id) return;
@@ -145,7 +145,7 @@ export class Concentrator {
         // Update handled in token hooks
         if (actor.isToken) return;
 
-        setProperty(options, `${NAME}.${FLAGS.concentrator.updateProcessed}`, true);
+        foundry.utils.setProperty(options, `${NAME}.${FLAGS.concentrator.updateProcessed}`, true);
         return Concentrator._processDamage(actor, options);
     }
 
@@ -163,13 +163,13 @@ export class Concentrator {
 
         if (!enableConcentrator) return true;
 
-        const newTempHealth = getProperty(update, `actorData.system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.temp`);
-        const oldTempHealth = getProperty(token, `actor.system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.temp`);
+        const newTempHealth = foundry.utils.getProperty(update, `actorData.system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.temp`);
+        const oldTempHealth = foundry.utils.getProperty(token, `actor.system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.temp`);
         
         const tempDamageTaken = Concentrator._wasDamageTaken(newTempHealth, oldTempHealth);
 
-        const newHealth = getProperty(update, `actorData.system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.value`);
-        const oldHealth = getProperty(token, `actor.system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.value`);
+        const newHealth = foundry.utils.getProperty(update, `actorData.system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.value`);
+        const oldHealth = foundry.utils.getProperty(token, `actor.system.${Sidekick.getSetting(SETTING_KEYS.concentrator.healthAttribute)}.value`);
         
         const damageTaken = Concentrator._wasDamageTaken(newHealth, oldHealth);
 
@@ -192,7 +192,7 @@ export class Concentrator {
      * @param {*} userId 
      */
     static _onUpdateToken(token, update, options, userId){
-        const damageTaken = getProperty(options, `${NAME}.${FLAGS.concentrator.damageTaken}`);
+        const damageTaken = foundry.utils.getProperty(options, `${NAME}.${FLAGS.concentrator.damageTaken}`);
         const gmUser = (game.user.isGM && game.userId === userId) ? game.user : Sidekick.getFirstGM();
 
         if (!damageTaken || game.userId !== gmUser?.id) return;
@@ -291,8 +291,8 @@ export class Concentrator {
 
         if (!entity || !isConcentrating || !displayPrompt) return;
 
-        const damageAmount = getProperty(options, `${NAME}.${FLAGS.concentrator.damageAmount}`);
-        const isDead = getProperty(options, `${NAME}.${FLAGS.concentrator.isDead}`);
+        const damageAmount = foundry.utils.getProperty(options, `${NAME}.${FLAGS.concentrator.damageAmount}`);
+        const isDead = foundry.utils.getProperty(options, `${NAME}.${FLAGS.concentrator.isDead}`);
         const dc = Concentrator._calculateDC(damageAmount);
 
         if (isDead) return Concentrator._processDeath(entity);

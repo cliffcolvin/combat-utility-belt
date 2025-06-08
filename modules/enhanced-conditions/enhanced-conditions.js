@@ -109,12 +109,12 @@ export class EnhancedConditions {
     static _onPreUpdateToken(token, update, options, userId) {
         const cubOption = options[BUTLER.NAME] = options[BUTLER.NAME] ?? {};
 
-        if (hasProperty(update, "actorData.effects")) {
+        if (foundry.utils.hasProperty(update, "actorData.effects")) {
             cubOption.existingEffects = token.actorData.effects ?? [];
             cubOption.updateEffects = update.actorData.effects ?? [];
         }
 
-        if (hasProperty(update, "overlayEffect")) {
+        if (foundry.utils.hasProperty(update, "overlayEffect")) {
             cubOption.existingOverlay = token.overlayEffect ?? null;
             cubOption.updateOverlay = update.overlayEffect ?? null;
         }
@@ -132,7 +132,7 @@ export class EnhancedConditions {
             return;
         }
 
-        if (!hasProperty(options, `${BUTLER.NAME}`)) return;
+        if (!foundry.utils.hasProperty(options, `${BUTLER.NAME}`)) return;
 
         const cubOption = options[BUTLER.NAME];
         const addUpdate = cubOption ? cubOption?.updateEffects?.length > cubOption?.existingEffects?.length : false;
@@ -164,7 +164,7 @@ export class EnhancedConditions {
             // based on the type, get the condition
             if (effect.type === "overlay") condition = EnhancedConditions.getConditionsByIcon(effect.effect) 
             else if (effect.type === "effect") {
-                if (!hasProperty(effect, `effect.flags.${BUTLER.NAME}.${BUTLER.FLAGS.enhancedConditions.conditionId}`)) continue;
+                if (!foundry.utils.hasProperty(effect, `effect.flags.${BUTLER.NAME}.${BUTLER.FLAGS.enhancedConditions.conditionId}`)) continue;
                 const effectId = effect.effect.flags[BUTLER.NAME][BUTLER.FLAGS.enhancedConditions.conditionId];
                 condition = EnhancedConditions.lookupEntryMapping(effectId);
             }
@@ -264,7 +264,7 @@ export class EnhancedConditions {
         const outputChatSetting = Sidekick.getSetting(BUTLER.SETTING_KEYS.enhancedConditions.outputChat);
         const combatant = combat.combatant;
 
-        if (!hasProperty(update, "turn") || !combatant || !enableEnhancedConditions || !outputChatSetting || !enableOutputCombat|| !game.user.isGM) {
+        if (!foundry.utils.hasProperty(update, "turn") || !combatant || !enableEnhancedConditions || !outputChatSetting || !enableOutputCombat|| !game.user.isGM) {
             return;
         }
 
@@ -973,7 +973,7 @@ export class EnhancedConditions {
         if (!effects) return;
 
         for (const effect of effects) {
-            const overlay = getProperty(effect, `flags.${BUTLER.NAME}.${BUTLER.FLAGS.enhancedConditions.overlay}`);
+            const overlay = foundry.utils.getProperty(effect, `flags.${BUTLER.NAME}.${BUTLER.FLAGS.enhancedConditions.overlay}`);
             // If the parent Condition for the ActiveEffect defines it as an overlay, mark the ActiveEffect as an overlay
             if (overlay) {
                 effect.flags.core.overlay = overlay;
@@ -1223,7 +1223,7 @@ export class EnhancedConditions {
                         continue;
                     }
 
-                    const conditionId = getProperty(effect, `flags.${BUTLER.NAME}.${BUTLER.FLAGS.enhancedConditions.conditionId}`);
+                    const conditionId = foundry.utils.getProperty(effect, `flags.${BUTLER.NAME}.${BUTLER.FLAGS.enhancedConditions.conditionId}`);
                     const matchedConditionEffects = existingConditionEffects.filter(e => e.getFlag(BUTLER.NAME, BUTLER.FLAGS.enhancedConditions.conditionId) === conditionId);
 
                     // Scenario 2: if duplicates are allowed, and existing conditions should be replaced, add any existing conditions to update

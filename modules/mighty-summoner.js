@@ -23,7 +23,7 @@ export class MightySummoner {
         }
         
         const ownedActors = owners.map(owner => {
-            const actors = game.actors.contents.filter(a => hasProperty(a, `ownership.${owner}`));
+            const actors = game.actors.contents.filter(a => foundry.utils.hasProperty(a, `ownership.${owner}`));
             return actors;
         }).flat();
 
@@ -66,7 +66,7 @@ export class MightySummoner {
      * @param {*} actor 
      */
     static _calculateHPFormula(actor) {
-        const formula = getProperty(actor, "system.attributes.hp.formula");
+        const formula = foundry.utils.getProperty(actor, "system.attributes.hp.formula");
         const match = formula.match(/\d+/)[0];
         if (!match) {
             return;

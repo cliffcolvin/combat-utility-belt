@@ -18,10 +18,10 @@ export class PanSelect {
 
         if (!enablePan && !enableSelect) return;
 
-        if (hasProperty(update, "turn") || getProperty(update, "started") || (getProperty(combat, "round") === 0 && getProperty(update, "round") === 1)) {
+        if (foundry.utils.hasProperty(update, "turn") || foundry.utils.getProperty(update, "started") || (foundry.utils.getProperty(combat, "round") === 0 && foundry.utils.getProperty(update, "round") === 1)) {
             options[BUTLER.NAME] = options[BUTLER.NAME] ?? {};
-            setProperty(options, `${BUTLER.NAME}.${BUTLER.FLAGS.panSelect.shouldPan}`,  enablePan);
-            setProperty(options, `${BUTLER.NAME}.${BUTLER.FLAGS.panSelect.shouldSelect}`,  enableSelect);
+            foundry.utils.setProperty(options, `${BUTLER.NAME}.${BUTLER.FLAGS.panSelect.shouldPan}`,  enablePan);
+            foundry.utils.setProperty(options, `${BUTLER.NAME}.${BUTLER.FLAGS.panSelect.shouldSelect}`,  enableSelect);
         } 
     }
 
@@ -37,11 +37,11 @@ export class PanSelect {
 
         if (!combatant) return;
 
-        if (getProperty(options, `${BUTLER.NAME}.${BUTLER.FLAGS.panSelect.shouldPan}`)) {
+        if (foundry.utils.getProperty(options, `${BUTLER.NAME}.${BUTLER.FLAGS.panSelect.shouldPan}`)) {
             PanSelect._updateHandler(combatant, "pan");
         }
 
-        if (getProperty(options, `${BUTLER.NAME}.${BUTLER.FLAGS.panSelect.shouldSelect}`)) {
+        if (foundry.utils.getProperty(options, `${BUTLER.NAME}.${BUTLER.FLAGS.panSelect.shouldSelect}`)) {
             PanSelect._updateHandler(combatant, "select");
         }
     }
@@ -52,7 +52,7 @@ export class PanSelect {
      */
     static _updateHandler(combatant, type) {
         const token = combatant.token;
-        const temporary = hasProperty(combatant, `flags.${BUTLER.NAME}.${BUTLER.FLAGS.temporaryCombatants.temporaryCombatant}`);
+        const temporary = foundry.utils.hasProperty(combatant, `flags.${BUTLER.NAME}.${BUTLER.FLAGS.temporaryCombatants.temporaryCombatant}`);
 
         if (!type || !token || temporary) return;
 
@@ -108,7 +108,7 @@ export class PanSelect {
 
         if (!actor) return;
 
-        const actorPermission = actor ? (actor.data.ownership[game.userId] || 0) : null;
+        const actorPermission = actor ? (actor.ownership[game.userId] || 0) : null;
 
         if (actorPermission === null) {
             return;
@@ -248,7 +248,7 @@ export class PanSelect {
         if (!token) return;
 
         const actor = token?.actor;
-        const actorPermission = actor ? actor.data.permission[game.userId] || 0 : null;
+        const actorPermission = actor ? actor.ownership[game.userId] || 0 : null;
 
         if (!actor || actorPermission === null || actorPermission < CONST.DOCUMENT_PERMISSION_LEVELS.OWNER) {
             return;
@@ -263,7 +263,7 @@ export class PanSelect {
      */
     static _checkObserverDeselect(token) {
         const actor = token?.actor;
-        const actorPermission = actor ? actor.data.ownership[game.userId] || 0 : null;
+        const actorPermission = actor ? actor.ownership[game.userId] || 0 : null;
 
         if (actorPermission === null) {
             return;

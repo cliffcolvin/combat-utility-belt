@@ -71,10 +71,10 @@ export class TokenUtility {
      * @param {*} actor
      */
     static async rollHP(actor, newFormula=null) {
-        const formula = newFormula || getProperty(actor, "system.attributes.hp.formula");
+        const formula = newFormula || foundry.utils.getProperty(actor, "system.attributes.hp.formula");
 
         if (!formula) {
-            const maxHP = getProperty(actor, "system.attributes.hp.max");
+            const maxHP = foundry.utils.getProperty(actor, "system.attributes.hp.max");
             return maxHP ?? 0;
         }
 
@@ -103,7 +103,7 @@ export class TokenUtility {
     static _buildHPData(hp) {
         const hpData = {
             actorData: {
-                data: {
+                system: {
                     attributes: {
                         hp: {
                             value: hp,

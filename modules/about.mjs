@@ -34,7 +34,7 @@ export default class AboutApp extends FormApplication {
      */
     async getData() {
         return {
-            version: game.modules.get(NAME).data.version,
+            version: game.modules.get(NAME).version,
             patrons: await this.fetchPatrons()
         }
     }

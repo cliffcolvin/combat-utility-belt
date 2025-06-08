@@ -32,7 +32,7 @@ export default class EnhancedEffectConfig extends ActiveEffectConfig {
      * @override
      */
     async _updateObject(event, formData) {
-        const conditionIdFlag = getProperty(this.object.flags, `${NAME}.${FLAGS.enhancedConditions.conditionId}`);
+        const conditionIdFlag = foundry.utils.getProperty(this.object.flags, `${NAME}.${FLAGS.enhancedConditions.conditionId}`);
         if (!conditionIdFlag) return;
 
         // find the matching condition row

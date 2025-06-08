@@ -383,11 +383,11 @@ export class ConditionLab extends FormApplication {
     async _processImport(html) {
         const form = html.find("form")[0];
 
-        if ( !form.data.files.length ) {
+        if ( !form.files.length ) {
             return ui.notifications.error(game.i18n.localize("ENHANCED_CONDITIONS.Import.NoFile"));
         }
 
-        const jsonFile = await readTextFromFile(form.data.files[0]);
+        const jsonFile = await readTextFromFile(form.files[0]);
         const json = JSON.parse(jsonFile);
         const map = EnhancedConditions.mapFromJson(json);
 
@@ -636,8 +636,8 @@ export class ConditionLab extends FormApplication {
         
         if (!conditionEffect) return;
 
-        if (!hasProperty(conditionEffect, `flags.${BUTLER.NAME}.${BUTLER.FLAGS.enhancedConditions.conditionId}`)) {
-            setProperty(conditionEffect, `flags.${BUTLER.NAME}.${BUTLER.FLAGS.enhancedConditions.conditionId}`, conditionId);
+                    if (!foundry.utils.hasProperty(conditionEffect, `flags.${BUTLER.NAME}.${BUTLER.FLAGS.enhancedConditions.conditionId}`)) {
+            foundry.utils.setProperty(conditionEffect, `flags.${BUTLER.NAME}.${BUTLER.FLAGS.enhancedConditions.conditionId}`, conditionId);
         }
 
         // Build a fake effect object for the ActiveEffectConfig sheet
@@ -782,7 +782,7 @@ export class ConditionLab extends FormApplication {
         const liRow = anchor?.closest("li");
         const rowNumber = parseInt(liRow?.dataset.mappingRow);
         const type = anchor?.className;
-        const newMap = deepClone(this.map);
+        const newMap = foundry.utils.deepClone(this.map);
         const mappingRow = newMap?.splice(rowNumber, 1) ?? [];
         let newIndex = -1;
 

@@ -286,7 +286,7 @@ export function registerSettings() {
                     title: game.i18n.localize(`${BUTLER.NAME}.ENHANCED_CONDITIONS.OutputChatConfirm.Title`),
                     content: game.i18n.localize(`${BUTLER.NAME}.ENHANCED_CONDITIONS.OutputChatConfirm.Content`),
                     yes: () => {
-                        const newMap = deepClone(game.cub.conditions);
+                        const newMap = foundry.utils.deepClone(game.cub.conditions);
                         if (!newMap.length) return;
                         newMap.forEach(c => c.options.outputChat = true);
                         Sidekick.setSetting(BUTLER.SETTING_KEYS.enhancedConditions.map, newMap);

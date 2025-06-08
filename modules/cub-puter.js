@@ -47,7 +47,7 @@ export class CUBPuter extends FormApplication {
 
         currentGadget.id = Object.keys(currentGadget).length > 0 ? Sidekick.getKeyByValue(gadgets, currentGadget) : null;
         this.currentGadgetId = this.currentGadgetId ? this.currentGadgetId : currentGadget.id ? currentGadget.id : null;
-        const gadgetSettingKeys = hasProperty(SETTING_KEYS, currentGadget.id) ? Object.values(SETTING_KEYS[currentGadget.id]).map(k => `${NAME}.${k}`) : [];
+        const gadgetSettingKeys = foundry.utils.hasProperty(SETTING_KEYS, currentGadget.id) ? Object.values(SETTING_KEYS[currentGadget.id]).map(k => `${NAME}.${k}`) : [];
 
         const settings = Array.from(game.settings.settings.entries()).filter(entry => {
                 const [key, setting] = entry;
