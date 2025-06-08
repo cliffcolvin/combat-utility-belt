@@ -1,11 +1,18 @@
-./dist/*
-./out/*
-./jsdoc/*
-./node_modules/*
-*.git*
-*.vscode*
+# Files and directories to exclude from the module zip
+.git/*
+.github/*
+node_modules/*
+.gitignore
+.eslintrc.json
 gulpfile.js
-package.json
+jsdoc-conf.json
 package-lock.json
-tsconfig.json
-foundry.js
+package.json
+package-module.sh
+# Exclude any development/build files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.vscode/*
+.idea/*
